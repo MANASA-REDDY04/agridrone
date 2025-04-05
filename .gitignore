@@ -1,0 +1,5 @@
+echo "venv/
+node_modules/
+__pycache__/
+.env
+*.log" > .gitignore
