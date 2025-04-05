@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://agridrone.onrender.com/"
 
 def test_root_endpoint():
     """Test the root endpoint of the API"""
