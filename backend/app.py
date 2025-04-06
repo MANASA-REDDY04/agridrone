@@ -28,7 +28,7 @@ jwt = JWTManager(app)
 CORS(app, 
      resources={r"/*": {"origins": "*"}}, 
      supports_credentials=True,
-     allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+     allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
 
 # Import routes
