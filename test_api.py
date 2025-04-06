@@ -1,7 +1,8 @@
 import requests
 import json
 
-BASE_URL = "https://agridrone.onrender.com/"
+# Your Render-deployed Flask API URL
+BASE_URL = "https://agridrone.onrender.com"
 
 def test_root_endpoint():
     """Test the root endpoint of the API"""
