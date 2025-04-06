@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:8000/api', // Direct connection to backend server with /api prefix
+  baseURL: "https://agridrone.onrender.com/api", // Direct connection to backend server with /api prefix
   headers: {
-    'Content-Type': 'application/json'
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 // Add a request interceptor to include the auth token in all requests
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -30,10 +30,10 @@ api.interceptors.response.use(
   (error) => {
     // Handle unauthorized errors (token expired, etc.)
     if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
       // Redirect to login page if needed
-      window.location.href = '/login';
+      window.location.href = "/login";
     }
     return Promise.reject(error);
   }
