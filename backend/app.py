@@ -46,6 +46,7 @@ app.register_blueprint(admin_bp, url_prefix='/api/admin')
 app.register_blueprint(weather_bp, url_prefix='/api/weather')
 
 # Root route
+# Root route
 @app.route('/')
 def index():
     return jsonify({
@@ -53,5 +54,3 @@ def index():
         'status': 'online'
     })
 
-if __name__ == '__main__':
-    app.run(debug=True)
